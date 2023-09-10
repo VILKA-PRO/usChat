@@ -1,0 +1,462 @@
+body {
+  font-size: 0.875rem;
+  min-height: 10vh;
+}
+
+.feather {
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(241, 241, 241);
+}
+
+::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 10px;
+}
+
+.scrollbox {
+  overflow: auto;
+  padding-right: 10px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 767.98px) {
+  .sidebar {
+    top: 5rem;
+  }
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(55vh - 60px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* Scrollable contents if viewport is shorter than content. */
+  visibility: hidden;
+}
+
+.sidebar-sticky2 {
+  position: relative;
+  top: 0;
+  height: calc(30vh);
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* Scrollable contents if viewport is shorter than content. */
+  visibility: hidden;
+}
+
+.leftbar-title {
+  justify-self: center;
+  height: 5vh;
+  background-color: rgb(241, 241, 241);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.leftbar,
+.leftbarMain {
+  background-color: rgb(241, 241, 241);
+}
+
+.leftbar,
+.leftbar2,
+.sidebar-sticky:hover,
+.sidebar-sticky2:hover {
+  visibility: visible;
+}
+
+.sidebar .nav-link {
+  font-weight: 500;
+}
+
+.sidebar .nav-link .feather {
+  margin-right: 4px;
+  color: #727272;
+}
+
+.sidebar .nav-link.active {
+  color: #2470dc;
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+  color: inherit;
+}
+
+.sidebar-heading {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.contacts > p {
+  margin: 10px 0;
+  padding: 0;
+}
+
+/*
+   * Navbar
+   */
+
+.navbar-brand {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.navbar .navbar-toggler {
+  top: 0.25rem;
+  right: 1rem;
+}
+
+.navbar .form-control {
+  padding: 0.75rem 1rem;
+  border-width: 0;
+  border-radius: 0;
+}
+
+.form-control-dark {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.form-control-dark:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  grid-gap: 3rem;
+  display: grid;
+  gap: 3rem;
+  grid-template-areas: "sidebar main toc";
+  grid-template-columns: minmax(0, 15rem) minmax(0, 2.5fr) minmax(0, 15rem);
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.avatar-container {
+  position: relative; /* Для позиционирования дочерних элементов относительно родительского */
+  display: inline-block; /* Чтобы элементы не переносились на новую строку */
+}
+
+.iconInAvatar {
+  position: absolute; /* Позиционируем иконку абсолютно относительно .avatar-container */
+  bottom: -5px; /* Располагаем иконку в верхнем краю */
+  right: -5px; /* Располагаем иконку в правом краю */
+  background-color: #ffffff;
+  border-radius: 50%;
+  border: 1px solid #373737;
+  padding: 0 3px;
+  /* Добавляем немного отступа для визуального разделения от аватара */
+  font-size: 12px; /* Размер шрифта иконки */
+  cursor: pointer; /* Добавляем указатель при наведении для обозначения интерактивности */
+}
+.iconInAvatar2 {
+  position: absolute; /* Позиционируем иконку абсолютно относительно .avatar-container */
+  bottom: 10%; /* Располагаем иконку в верхнем краю */
+  right: -22px; /* Располагаем иконку в правом краю */
+  background-color: #ffffff;
+  border-radius: 50%;
+  border: 1px solid #373737;
+  padding: 0 3px;
+  /* Добавляем немного отступа для визуального разделения от аватара */
+  font-size: 10px; /* Размер шрифта иконки */
+  cursor: pointer; /* Добавляем указатель при наведении для обозначения интерактивности */
+}
+
+/* MESSAGE WINDOW  */
+
+.message-container {
+  position: relative;
+  top: 0;
+  height: calc(90vh - 75px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* Scrollable contents if viewport is shorter than content. */
+  padding: 1em 0;
+}
+
+.income-message {
+  padding: 10px;
+}
+
+.outcome-message {
+  padding: 10px;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 7px;
+  margin-bottom: 5px;
+}
+
+.nameInChat {
+  font-weight: 700;
+}
+
+/* RIGHT BAR  
+============================ */
+
+.rightbar {
+  background-color: #b2b2b2;
+}
+
+.rightbar-sticky {
+  position: relative;
+  top: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.righttbar-title {
+  justify-self: center;
+  height: 5vh;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.avatarLeftBar {
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.avatarProfile {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+}
+
+.contact:hover {
+  background-color: rgb(215, 215, 215);
+}
+
+.chosen {
+  background-color: rgb(215, 215, 215);
+  box-shadow: inset 2px 0px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+.group:hover {
+  background-color: rgb(215, 215, 215);
+}
+
+.groups > .chosen {
+  background-color: rgb(215, 215, 215);
+  box-shadow: inset 2px 0px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+.nameInList {
+  font-weight: 300;
+}
+
+.timestamp {
+  font-weight: 200;
+  font-size: smaller;
+  color: #727272;
+}
+
+/* Context Menu 
+===================== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+.context-menu {
+  display: none;
+  position: absolute;
+  z-index: 9999;
+  width: fit-content;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+}
+
+.context-menu .menu {
+  padding: 5px 10px;
+  margin: 10px 0px;
+}
+
+.content .item {
+  list-style: none;
+  font-size: 12px;
+  height: 30px;
+  display: flex;
+  width: 100%;
+  cursor: pointer;
+  align-items: center;
+  border-radius: 5px;
+  margin-bottom: 2px;
+  padding: 0 10px 0 10px;
+}
+
+.content .item:hover {
+  background: #f2f2f2;
+}
+
+.content .item span {
+  font-size: 19px;
+}
+
+.content .setting {
+  display: flex;
+  padding: 5px 12px;
+  border-top: 1px solid #ccc;
+}
+
+.content .share {
+  position: relative;
+  justify-content: space-between;
+}
+
+/* ===================== 
+Context Menu */
+
+/* SEARCH CONTACTS 
+===================== */
+.search-input-group {
+  position: relative;
+  outline: none;
+}
+
+.search-input {
+  outline: none;
+  /* Убирает выделение при активации (фокусировке) на поле */
+  font-size: small;
+}
+
+.search-input:focus + .search-icon {
+  display: none;
+}
+
+.search-input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #ccc;
+  font-size: 1.25rem;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #727272;
+}
+
+.circle i {
+  color: #727272;
+}
+
+/* ===================== */
+/* SEARCH CONTACTS  */
+
+/* MODAL ADD GROUPS 
+========== */
+
+.modal {
+  height: auto;
+}
+
+.modal-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 40vh;
+}
+
+.myModal-sticky {
+  position: relative;
+  top: 0;
+  height: calc(35vh);
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* Scrollable contents if viewport is shorter than content. */
+  visibility: hidden;
+}
+
+.myModal-sticky-add-contact {
+  position: relative;
+  top: 0;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* Scrollable contents if viewport is shorter than content. */
+  visibility: hidden;
+}
+
+.myModalbar,
+.myModal-sticky:hover {
+  visibility: visible;
+}
+
+.avatarModal {
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.contactModal,
+.contactToForward {
+  padding: 8px 0px;
+  padding-left: 12px;
+}
+.contactsModal > p,
+.contactToForward > p {
+  margin: 10px 0;
+}
+
+.contactModal:hover,
+.contactToForward:hover {
+  background-color: rgb(215, 215, 215);
+}
+
+.contactsModal > .chosen,
+.contactToForward > .chosen {
+  background-color: rgb(215, 215, 215);
+  box-shadow: inset 2px 0px 5px 0px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========
+MODAL ADD GROUPS */
+
+.forwardedText {
+  font-size: smaller;
+  color: #727272;
+  margin: 0;
+}
